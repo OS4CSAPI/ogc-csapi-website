@@ -178,7 +178,9 @@ html(lang='en')
                 .row
                     .col-lg-4
                         .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/inaction/csapi-go.svg', alt='CS GO deployment')
+                            .ribbon-holder.mx-auto
+                                .ribbon Server
+                                img.mx-auto.rounded-circle(src='assets/img/inaction/csapi-go.svg', alt='CS GO deployment')
                             h4 CS GO Reference Server
                             p.text-muted Powered by connected-systems-go
                             p.text-muted A public Go-based CSAPI server hosted by OS4CSAPI. Implements Part 1 (Feature Resources) and Part 2 (Dynamic Data) and is the primary integration target for the OS4CSAPI conformance and tutorial work.
@@ -189,7 +191,9 @@ html(lang='en')
 
                     .col-lg-4
                         .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/inaction/osh.png', alt='OpenSensorHub deployment')
+                            .ribbon-holder.mx-auto
+                                .ribbon Server
+                                img.mx-auto.rounded-circle(src='assets/img/inaction/osh.png', alt='OpenSensorHub deployment')
                             h4 OpenSensorHub Node
                             p.text-muted Powered by OpenSensorHub
                             p.text-muted A public OpenSensorHub instance exposing live sensors, datastreams, and observations through the CSAPI Part 1 and Part 2 endpoints, including SensorML system descriptions and SWE Common observation payloads.
@@ -200,7 +204,9 @@ html(lang='en')
 
                     .col-lg-4
                         .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/inaction/52north.svg', alt='52 North deployment')
+                            .ribbon-holder.mx-auto
+                                .ribbon Server
+                                img.mx-auto.rounded-circle(src='assets/img/inaction/52north.svg', alt='52 North deployment')
                             h4 52°North CSA Demo
                             p.text-muted Powered by connected-systems-pygeoapi
                             p.text-muted A public CSAPI demonstrator from 52°North built on pygeoapi. Hosts curated example collections, systems, and observations and is a useful target for testing pygeoapi-based clients and tooling.
@@ -212,7 +218,9 @@ html(lang='en')
                 .row.justify-content-center.mt-4
                     .col-lg-8
                         .team-member.text-center
-                            img.mx-auto.rounded-circle(src='assets/img/inaction/explorer.svg', alt='OGC CSAPI Explorer')
+                            .ribbon-holder.mx-auto
+                                .ribbon Client
+                                img.mx-auto.rounded-circle(src='assets/img/inaction/explorer.svg', alt='OGC CSAPI Explorer')
                             h4 OGC CSAPI Explorer
                             p.text-muted A reference web client
                             p.text-muted A browser-based explorer for any conformant CSAPI server. Point it at the deployments above (or your own) and walk Systems, Datastreams, and Observations interactively — useful as a smoke test for your own implementation work.
