@@ -1,18 +1,20 @@
-# README
+# OGC API - Connected Systems Micro Website
 
-This repository hosts the source code of the OGC API - Features Micro Website: https://features.developer.ogc.org
+This repository hosts the source code of the OGC API - Connected Systems Micro Website: https://csapi.developer.ogc.org
 
-The website is served from the [gh-pages](https://github.com/opengeospatial/ogc-features-website/tree/gh-pages) branch. Read [this note](#note-about-publishing-the-website), to understand how the website is generated. 
+The site is built and deployed automatically by [GitHub Actions](https://github.com/OS4CSAPI/ogc-csapi-website/actions) on every push to `master`. Read [this note](#note-about-publishing-the-website) for details.
+
+This project was forked from [opengeospatial/ogc-features-website](https://github.com/opengeospatial/ogc-features-website) and adapted for the OGC API – Connected Systems standards family (CSAPI Part 1: Feature Resources, Part 2: Dynamic Data, plus the SensorML and SWE Common encodings).
 
 ## Quick Start :rocket:
 
 Clone this repository with:
 
-`git clone https://github.com/opengeospatial/ogc-features-website.git`
+`git clone https://github.com/OS4CSAPI/ogc-csapi-website.git`
 
 Then enter the folder:
 
-`cd ogc-features-website`
+`cd ogc-csapi-website`
 
 Install dependencies:
 
@@ -30,14 +32,14 @@ The hot reload will ensure that the changes you do on the code will be reflected
 
 ### Note about Publishing the Website
 
-Commit all your changes to the `master` branch. **The `gh-pages` branch will be wiped each time, and generated dynamically from these [GitHub actions](https://github.com/opengeospatial/ogc-features-website/actions)**, which create a static build. In a nutshell, **you don't need to do anything to publish the website** - the republish will be triggered automatically with each push to `master`.
+Commit all your changes to the `master` branch. The [GitHub Actions workflow](./.github/workflows/main.yml) builds the static site from `src/` into `dist/`, uploads it as a Pages artifact, and deploys it. **You don't need to do anything to publish the website** - the republish is triggered automatically with each push to `master`.
 
 ## Contributing 🤝
 
 This website is a live project and we welcome contributions from the community! If you have suggestions for improvements, found a bug, or want to add new features, feel free to:
 
-* Open an [issue](https://github.com/opengeospatial/ogc-features-website/issues) to start a discussion
-* Submit a [pull request](https://github.com/opengeospatial/ogc-features-website/pulls) with your proposed changes
+* Open an [issue](https://github.com/OS4CSAPI/ogc-csapi-website/issues) to start a discussion
+* Submit a [pull request](https://github.com/OS4CSAPI/ogc-csapi-website/pulls) with your proposed changes
 
 We appreciate your support in making this website better!
 
