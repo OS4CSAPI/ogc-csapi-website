@@ -5,10 +5,10 @@ html(lang='en')
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
-        meta(name='author', content='')
+        meta(name='description', content='Developer micro site for the OGC API – Connected Systems standards family (CSAPI Part 1: Feature Resources, Part 2: Dynamic Data) and the SensorML and SWE Common encodings.')
+        meta(name='author', content='OS4CSAPI')
 
-        title OGC API - Features
+        title OGC API - Connected Systems
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/3d_emblem_lockup.ico')
@@ -46,15 +46,15 @@ html(lang='en')
                         li.nav-item
                             a.nav-link(href='#getinvolved') Get Involved
 
-                a(href='https://github.com/opengeospatial/ogc-features-website')
+                a(href='https://github.com/OS4CSAPI/ogc-csapi-website')
                     img(style='position: absolute; top: 0; right: 0; border: 0;' src='https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png' alt='Fork me on GitHub')
 
 
         // Masthead
         header.masthead
             .container
-                .masthead-heading.text-uppercase OGC API - Features
-                .masthead-subheading Querying geospatial data on the web
+                .masthead-heading.text-uppercase OGC API - Connected Systems
+                .masthead-subheading A unified web API for sensors, systems, observations, and tasking
                 
                 a.btn.btn-primary.btn-xl.text-uppercase(href='#why') Tell Me More
                 a.btn.btn-primary.btn-xl.text-uppercase(href='#getstarted') Get Started
@@ -67,30 +67,31 @@ html(lang='en')
             .container
                 .text-center
                     h2.section-heading.text-uppercase Why?
-                    h3.section-subheading.text-muted Main reasons for using OGC API - Features.
+                    h3.section-subheading.text-muted Main reasons for using OGC API - Connected Systems.
                 .row.text-center
                     .col-md-4
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-plug.fa-stack-1x.fa-inverse
-                        h4.my-3 Interoperable
+                            i.fas.fa-broadcast-tower.fa-stack-1x.fa-inverse
+                        h4.my-3 One API for Sensors and Systems
                         p.text-muted
-                            | Ensure that your application can read data from existing and new sources without changing how you communicate with them. Ensure that the data you share can be accessed by different clients, without having to share details of your implementation.
+                            | Connected Systems unifies the description, discovery, and access of sensors, platforms, processes, and the observations and commands that flow through them. Replace bespoke, vendor-specific sensor APIs with a single resource model that covers fixed installations, mobile platforms, simulations, and human observers alike.
                     .col-md-4
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
                             i.fas.fa-laptop-code.fa-stack-1x.fa-inverse
-                        h4.my-3 Based on Best Practices
+                        h4.my-3 Built on the OGC API Family
                         p.text-muted
-                            | This API is based on the technologies and vocabularies that make up the web today, such as REST, OpenAPI, JSON and HTML. This should ensure a smooth learning curve for any web developer, even if they are not familiar with GIS.
+                            | CSAPI is built on the same Common, Features, and EDR foundations as the rest of the OGC API family. If you already speak REST, OpenAPI, JSON, and GeoJSON, you can be productive in minutes — and clients written for OGC API - Features work against CSAPI feature collections out of the box.
                     .col-md-4
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-layer-group.fa-stack-1x.fa-inverse
-                        h4.my-3 Supported on Existing Products
+                            i.fas.fa-bolt.fa-stack-1x.fa-inverse
+                        h4.my-3 Real-Time and Historical, Together
                         p.text-muted
-                            | You can start using the OGC API - Features specification today, by tapping into one of the 
-                            a(href='#implementations') existing server or client implementations.
+                            | Datastreams and ControlStreams expose live observations and tasking commands over HTTP, WebSocket, and MQTT, alongside the matching historical archives. One model, one API, from streaming telemetry to deep-time analysis. Tap into one of the 
+                            a(href='#implementations') existing server or client implementations
+                            |  to start today.
 
         // Portfolio Grid
         section#portfolio.page-section.bg-light
