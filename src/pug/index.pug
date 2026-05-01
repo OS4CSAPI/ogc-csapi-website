@@ -99,32 +99,32 @@ html(lang='en')
                 .text-center
                     h2.section-heading.text-uppercase Overview
                     h3.section-subheading.text-muted OGC API - Connected Systems exposes sensors, the things they observe, and the commands sent to them as web resources.
-                    img(src='assets/img/overview.png', title='OGC API - Connected Systems resource model', alt='Resource model overview')
+                    img.img-fluid(src='assets/img/overview.svg', title='OGC API - Connected Systems resource model', alt='Resource model overview')
                 .text-left
                     p.text-muted
                         | The standard is published in two parts. 
                         a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' target='_blank') Part 1: Feature Resources
-                        |  defines how to describe and discover the systems that produce data \u2014 their identifiers, metadata, deployment context, and the things they sample. 
+                        |  defines how to describe and discover the systems that produce data — their identifiers, metadata, deployment context, and the things they sample. 
                         a(href='https://docs.ogc.org/is/23-002r0/23-002r0.html' target='_blank') Part 2: Dynamic Data
                         |  defines how observations and tasking commands flow to and from those systems in real time and historically.
-                    h4.mt-4 Part 1 \u2014 Feature Resources
+                    h4.mt-4 Part 1 — Feature Resources
                     ul
                         li
                             h4 Systems
-                            p.text-muted Anything that produces data or accepts commands \u2014 a sensor, a platform, a process, a simulation, or a human observer. Systems may be nested (a satellite carries instruments which carry detectors) and have a lifecycle of Deployments.
+                            p.text-muted Anything that produces data or accepts commands — a sensor, a platform, a process, a simulation, or a human observer. Systems may be nested (a satellite carries instruments which carry detectors) and have a lifecycle of Deployments.
                         li
                             h4 Procedures
                             p.text-muted The methodology a System implements: the model of a sensor, a survey protocol, an algorithm. Procedures describe what a System is capable of, independent of any specific deployment.
                         li
                             h4 Deployments
-                            p.text-muted A specific instance of a System operating at a place and time \u2014 a buoy moored at a station, a UAV flown on a sortie, an instrument installed on a tower.
+                            p.text-muted A specific instance of a System operating at a place and time — a buoy moored at a station, a UAV flown on a sortie, an instrument installed on a tower.
                         li
                             h4 Sampling Features
                             p.text-muted The geometry that links what a System measured to where and how it measured it: a sampling point, curve, surface, or volume in the real world.
                         li
                             h4 Features of Interest
-                            p.text-muted The real-world thing being observed or acted upon \u2014 a river reach, a building, an aircraft, a parcel of atmosphere.
-                    h4.mt-4 Part 2 \u2014 Dynamic Data
+                            p.text-muted The real-world thing being observed or acted upon — a river reach, a building, an aircraft, a parcel of atmosphere.
+                    h4.mt-4 Part 2 — Dynamic Data
                     ul
                         li
                             h4 Datastreams &amp; Observations
@@ -134,7 +134,7 @@ html(lang='en')
                             p.text-muted The tasking counterpart to Datastreams. A ControlStream is the channel through which Commands are issued to a System; the standard defines command lifecycle, status reporting, and the same multi-protocol delivery model as Datastreams.
                         li
                             h4 SWE Common &amp; SensorML encodings
-                            p.text-muted Observation payloads and System descriptions are encoded with the OGC SWE Common data model and SensorML \u2014 self-describing, schema-driven encodings that capture units, uncertainties, quality flags, and processing lineage so consumers can interpret data without out-of-band documentation.
+                            p.text-muted Observation payloads and System descriptions are encoded with the OGC SWE Common data model and SensorML — self-describing, schema-driven encodings that capture units, uncertainties, quality flags, and processing lineage so consumers can interpret data without out-of-band documentation.
 
                 p.text-muted See the
                     |  
@@ -149,119 +149,65 @@ html(lang='en')
             .container
                 .text-center
                     h2.section-heading.text-uppercase See it In Action
-                    h3.section-subheading.text-muted This is a list of datasets, served by implementations of OGC API - Features. Please
-                        a(href='mailto:jsimoes@ogc.org') get in touch
-                        |, if you would like to add your dataset to the list.
-                       
+                    h3.section-subheading.text-muted Public CSAPI deployments and a reference client you can browse them with right now. If you operate a CSAPI service and would like it listed,
+                        |  
+                        a(href='https://github.com/OS4CSAPI/ogc-csapi-website/issues') open an issue
+                        | .
+
 
                 .row
                     .col-lg-4
                         .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/ldproxy1.png', alt='...')
-                            h4 Vineyards in Rhineland-Palatinate, Germany
-                            p.text-muted Powered by Ldproxy
-                            p.text-muted Have you ever wondered where the wine that you are drinking comes from? If the wine comes from the wine-growing regions Mosel, Nahe, Rheinhessen, Pfalz, Ahr, or Mittelrhein you can find this information in this API.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://demo.ldproxy.net/vineyards' title='Collection Resource' target="_blank")
+                            img.mx-auto.rounded-circle(src='assets/img/inaction/csapi-go.svg', alt='CS GO deployment')
+                            h4 CS GO Reference Server
+                            p.text-muted Powered by connected-systems-go
+                            p.text-muted A public Go-based CSAPI server hosted by OS4CSAPI. Implements Part 1 (Feature Resources) and Part 2 (Dynamic Data) and is the primary integration target for the OS4CSAPI conformance and tutorial work.
+                            a.btn.btn-dark.btn-social.mx-2(href='https://129-80-248-53.sslip.io/csapi-go' title='Landing page' target='_blank')
                                 i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://demo.ldproxy.net/vineyards/api/' title='OpenAPI definition' target="_blank")
+                            a.btn.btn-dark.btn-social.mx-2(href='https://github.com/SomethingCreativeStudios/connected-systems-go' title='Source code' target='_blank')
+                                i.fab.fa-github
+
+                    .col-lg-4
+                        .team-member
+                            img.mx-auto.rounded-circle(src='assets/img/inaction/osh.svg', alt='OpenSensorHub deployment')
+                            h4 OpenSensorHub Node
+                            p.text-muted Powered by OpenSensorHub
+                            p.text-muted A public OpenSensorHub instance exposing live sensors, datastreams, and observations through the CSAPI Part 1 and Part 2 endpoints, including SensorML system descriptions and SWE Common observation payloads.
+                            a.btn.btn-dark.btn-social.mx-2(href='https://129-80-248-53.sslip.io/sensorhub/api' title='Landing page' target='_blank')
+                                i.fa.fa-link
+                            a.btn.btn-dark.btn-social.mx-2(href='https://github.com/opensensorhub' title='Source code' target='_blank')
+                                i.fab.fa-github
+
+                    .col-lg-4
+                        .team-member
+                            img.mx-auto.rounded-circle(src='assets/img/inaction/52north.svg', alt='52 North deployment')
+                            h4 52°North CSA Demo
+                            p.text-muted Powered by connected-systems-pygeoapi
+                            p.text-muted A public CSAPI demonstrator from 52°North built on pygeoapi. Hosts curated example collections, systems, and observations and is a useful target for testing pygeoapi-based clients and tooling.
+                            a.btn.btn-dark.btn-social.mx-2(href='https://csa.demo.52north.org/' title='Landing page' target='_blank')
+                                i.fa.fa-link
+                            a.btn.btn-dark.btn-social.mx-2(href='https://csa.demo.52north.org/openapi?f=html' title='OpenAPI definition' target='_blank')
                                 i.fa.fa-code
 
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/pygeoapi.png', alt='...')
-                            h4 Portuguese Points of Interest
-                            p.text-muted Powered by Pygeoapi
-                            p.text-muted Portuguese Points of Interest obtained from OpenStreetMap. Dataset includes Madeira and Azores islands. Uses GeoPackage backend via OGR provider.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://demo.pygeoapi.io/master/collections/ogr_gpkg_poi' title='Collection Resource' target="_blank")
+                .row.justify-content-center.mt-4
+                    .col-lg-8
+                        .team-member.text-center
+                            img.mx-auto.rounded-circle(src='assets/img/inaction/explorer.svg', alt='OGC CSAPI Explorer')
+                            h4 OGC CSAPI Explorer
+                            p.text-muted A reference web client
+                            p.text-muted A browser-based explorer for any conformant CSAPI server. Point it at the deployments above (or your own) and walk Systems, Datastreams, and Observations interactively — useful as a smoke test for your own implementation work.
+                            a.btn.btn-dark.btn-social.mx-2(href='https://ogc-csapi-explorer.pages.dev/' title='Open the explorer' target='_blank')
                                 i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://demo.pygeoapi.io/master/openapi?f=html' title='OpenAPI definition' target="_blank")
-                                i.fa.fa-code
-
-
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/cubewerx.png', alt='...')
-                            h4 Zaatari Refugee Camp مخيم الزعتري
-                            p.text-muted Powered by CubeWerx
-                            p.text-muted Zaatari is a refugee camp in Jordan, located 10 kilometres east of Mafraq, which has gradually evolved into a permanent settlement; it is the world’s largest camp for Syrian refugees.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/zaatari' title='Collection Resource' target="_blank")
-                                i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://www.pvretano.com/cubewerx/cubeserv/default/ogcapi/zaatari/api?f=html' title='OpenAPI definition' target="_blank")
-                                i.fa.fa-code
-
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/os-ngd-api-features.png', alt='...')
-                            h4 OS NGD API – Features
-                            p.text-muted Powered by The OS Data Hub
-                            p.text-muted Easy online access to the OS National Geographic Database, providing a rich and consistent information about the real world.
-                            a.btn.btn-dark.btn-social.mx-2(href='Registration Page' title='' target="_blank")
-                                i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://osngd.gitbook.io/osngd/accessing-os-ngd/access-the-os-ngd-api-features' title='API documentation' target="_blank")
-                                i.fa.fa-book-open 
-                                
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/OSMOttawa.png', alt='...')
-                            h4 Ottawa OpenStreetMap roads
-                            p.text-muted Powered by GNOSIS
-                            p.text-muted OpenStreetMap (OSM) is a free, open geographic database updated and maintained by a community of volunteers via open collaboration. This dataset is an OpenStreetMap extract that contains the roads of Ottawa, Canada.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://maps.gnosis.earth/ogcapi/collections/osm:ottawa:roads' title='Collection Resource' target="_blank")
-                                i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://maps.gnosis.earth/ogcapi/api' title='OpenAPI definition' target="_blank")
-                                i.fa.fa-code
-
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/wetlands.png', alt='...')
-                            h4 Geographic Objects from the National Cartographic System of Spain
-                            p.text-muted Powered by pygeoapi
-                            p.text-muted Includes collections such as Hydrography, Transport Networks, CartoCiudad postal addresses and the Information System on Land Occupation of Spain 2014 (SIOSE).
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api-features.idee.es/collections?f=html&lang=en' title='Collections Resource' target="_blank")
-                                i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api-features.idee.es/openapi?f=html' title='OpenAPI definition' target="_blank")
-                                i.fa.fa-book-open 
-
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/bugio.jpg', alt='...')
-                            h4 Aids to Navigation - List of Lights, Buoys and Fog Signals
-                            p.text-muted Powered by pygeoapi
-                            p.text-muted The Aids to Navigation feature collection contains updated information regarding maritime visual and sound signalling existing on the coast and in the interior of ports in Portugal.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api-features.hidrografico.pt/collections/aton?lang=en-US' title='Collection Resource' target="_blank")
-                                i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api-features.hidrografico.pt/openapi?lang=en-US' title='OpenAPI definition' target="_blank")
-                                i.fa.fa-book-open 
-
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/pdok.png', alt='...')
-                            h4 Key Register Large-scale Topography (BGT), Netherlands
-                            p.text-muted Powered by GoKoala
-                            p.text-muted Are you interested in large-scale topographic data of the Netherlands? In the Key Register Large-scale Topography (BGT) you can find all about building types, address labels, road segments (such as cycle paths, lanes, driveways, and shoulders), as well as topographic boundaries (such as fences and walls), terrain types, and water. You can access this data directly or use the landing page.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api.pdok.nl/lv/bgt/ogc/v1/collections?lang=en-US' title='Collections Resource' target="_blank")
-                                i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api.pdok.nl/lv/bgt/ogc/v1/api?lang=en-US' title='OpenAPI definition' target="_blank")
-                                i.fa.fa-book-open 
-
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/ca-eccc-msc.png', alt='...')
-                            h4 MSC GeoMet - GeoMet-OGC-API
-                            p.text-muted Powered by pygeoapi
-                            p.text-muted GeoMet-OGC-API provides public access to the Meteorological Service of Canada (MSC) and Environment and Climate Change Canada (ECCC) data via OGC APIs. Through open standards, users can freely and quickly access thousands of real-time and archived weather, climate and water datasets and products and integrate them in their domain-specific applications and decision support systems.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api.weather.gc.ca' title='Landing page' target="_blank")
-                                i.fa.fa-link
-                            a.btn.btn-dark.btn-social.mx-2(href='https://api.weather.gc.ca/openapi' title='OpenAPI definition' target="_blank")
-                                i.fa.fa-code
 
         section#implementations.page-section
             .container
                 .text-center
                     h2.section-heading.text-uppercase Use it
 
-                    h3.section-subheading.text-muted Do you want to start using OGC API - Features? Before starting to implement the spec, please take a look at the existing implementations. 
-        
+                    h3.section-subheading.text-muted Existing CSAPI server and client implementations you can build on. The ecosystem is young — if you have an implementation you would like listed,
+                        |  
+                        a(href='https://github.com/OS4CSAPI/ogc-csapi-website/issues') open an issue
+                        | .
 
 
                     <table class="table table-bordered">
@@ -272,57 +218,26 @@ html(lang='en')
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="row" rowspan="3" class="table-info">Java <i class="fab fa-java"></i></th>
-                        <td>Ldproxy<sup>*</sup></td>
-                        <td title="GitHub repository"><a href="https://github.com/interactive-instruments/ldproxy"><i class="fab fa-github"></i></a></td>
-                        <td title="Docker image"><a href="https://hub.docker.com/r/iide/ldproxy/"><i class="fab fa-docker"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://github.com/interactive-instruments/ldproxy/tree/master/demo/vineyards"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>
+                        <th scope="row" class="table-info">Go <i class="fas fa-server"></i></th>
+                        <td>connected-systems-go</td>
+                        <td title="GitHub repository"><a href="https://github.com/SomethingCreativeStudios/connected-systems-go" target="_blank"><i class="fab fa-github"></i></a></td>
+                        <td title="Live demo"><a href="https://129-80-248-53.sslip.io/csapi-go" target="_blank"><i class="fas fa-link"></i></a></td>
+                        <td>A Go implementation of CSAPI Part 1 and Part 2; primary integration target for OS4CSAPI conformance work.</td>
                         </tr>
                         <tr>
-                        <td>Geoserver</td>
-                        <td title="GitHub repository"><a href="https://github.com/geoserver/geoserver"><i class="fab fa-github"></i></a></td>
-                        <td title="Docker image"><a href="https://hub.docker.com/r/oscarfonts/geoserver"><i class="fab fa-docker"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://docs.geoserver.org/latest/en/user/community/ogc-api/install.html"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr>
-                        <tr>                        
-                        <td>Deegree<sup>*</sup></td>
-                        <td title="GitHub repository"><a href="https://github.com/deegree/deegree-ogcapi"><i class="fab fa-github"></i></a></td>
-                        <td title="Docker image"></td>
-                        <td title="Tutorial/Example"><a href="https://oaf.lat-lon.de/deegree-services-oaf/documentation/index.html"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
+                        <th scope="row" class="table-info">Java <i class="fab fa-java"></i></th>
+                        <td>OpenSensorHub</td>
+                        <td title="GitHub repository"><a href="https://github.com/opensensorhub" target="_blank"><i class="fab fa-github"></i></a></td>
+                        <td title="Live demo"><a href="https://129-80-248-53.sslip.io/sensorhub/api" target="_blank"><i class="fas fa-link"></i></a></td>
+                        <td>Mature Java sensor framework with native CSAPI support, including SensorML and SWE Common encodings.</td>
                         </tr>
                         <tr>
-                        <th scope="row" rowspan="2" class="table-info">Python <i class="fab fa-python"></i></th>
-                        <td>pygeoapi<sup>*</sup></td>
-                        <td title="GitHub repository"><a href="https://github.com/geopython/pygeoapi"><i class="fab fa-github"></i></a></td>
-                        <td title="Docker image"><a href="https://hub.docker.com/r/geopython/pygeoapi"><i class="fab fa-docker"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://docs.pygeoapi.io/en/latest/"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
+                        <th scope="row" class="table-info">Python <i class="fab fa-python"></i></th>
+                        <td>connected-systems-pygeoapi</td>
+                        <td title="GitHub repository"><a href="https://github.com/52North/connected-systems-pygeoapi" target="_blank"><i class="fab fa-github"></i></a></td>
+                        <td title="Live demo"><a href="https://csa.demo.52north.org/" target="_blank"><i class="fas fa-link"></i></a></td>
+                        <td>52°North's CSAPI plugin for pygeoapi.</td>
                         </tr>
-                        <tr>
-                        <td>GeoPortal</td>
-                        <td title="GitHub repository"><a href="https://github.com/mrmap-community/GeoPortal.rlp"><i class="fab fa-github"></i></a></td>
-                        <td></td>
-                        <td></td>                
-                        </tr>                        
-                        <tr>
-                        <th scope="row" class="table-info">JavaScript <i class="fab fa-js"></i></th>
-                        <td>Sofp</td>
-                        <td title="GitHub repository"><a href="https://github.com/vaisala-oss/sofp-core"><i class="fab fa-github"></i></a><a href="https://github.com/vaisala-oss/sofp-lib"><i class="fab fa-github"></i></a></td>
-                        <td title="Docker image"><a href="https://hub.docker.com/r/sofp/core"><i class="fab fa-docker"></i></a><a href="https://hub.docker.com/r/sofp/example-backend"><i class="fab fa-docker"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://github.com/vaisala-oss/sofp-example-backend"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr>
-                        <tr>
-                        <th scope="row" rowspan="2" class="table-info">C/C++</th>
-                        <td>QGIS Server</td>
-                        <td title="GitHub repository"><a href="https://github.com/qgis/QGIS/"><i class="fab fa-github"></i></a></td>
-                        <td title="Docker image"><a href="https://hub.docker.com/r/opengisch/qgis-server"><i class="fab fa-docker"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://docs.qgis.org/testing/en/docs/server_manual/services.html#wfs3-ogc-api-features"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr>
-                        <tr>
-                        <td>GNOSIS Map Server<sup>*</sup></td>
-                        <td title="Website"><a href="https://ecere.ca/gnosis/"><i class="fas fa-link"></i></a></td>
-                        <td title="Docker image"></td>
-                        <td title="Tutorial/Example"></td>                
-                        </tr>                        
                     </tbody>
                     </table>
 
@@ -335,191 +250,76 @@ html(lang='en')
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="row" rowspan="2" class="table-info">Python <i class="fab fa-python"></i></th>
-                        <td>OWSLib</td>
-                        <td title="GitHub repository"><a href="https://github.com/geopython/OWSLib"><i class="fab fa-github"></i></a></td>
-                        <td title="Code sample/Documentation"><a href="https://geopython.github.io/OWSLib/usage.html#ogc-api-features-1-0"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
+                        <th scope="row" class="table-info">TypeScript <i class="fab fa-js"></i></th>
+                        <td>ogc-client (CSAPI fork)</td>
+                        <td title="GitHub repository"><a href="https://github.com/RiversideResearch/ogc-client" target="_blank"><i class="fab fa-github"></i></a></td>
+                        <td title="npm"><a href="https://www.npmjs.com/package/@camptocamp/ogc-client" target="_blank"><i class="fab fa-npm"></i></a></td>
+                        <td>Browser-friendly TypeScript client. The Riverside Research fork adds CSAPI Part 1 and Part 2 resource access on top of upstream OGC API support.</td>
                         </tr>
                         <tr>
-                        <td>Pygdal</td>
-                        <td title="GitHub repository"><a href="https://github.com/nextgis/pygdal"><i class="fab fa-github"></i></a></td>
-                        <td colspan="2">Check <a href="https://gdal.org/drivers/vector/oapif.html">GDAL's documentation</a>.</td>          
-                        </tr>                        
-                        <tr>
-                        <th scope="row" rowspan="2" class="table-info">JavaScript <i class="fab fa-js"></i></th>
-                        <td>ogcapi-js</td>
-                        <td title="GitHub repository"><a href="https://github.com/haoliangyu/ogcapi-js"><i class="fab fa-github"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://haoliangyu.github.io/ogcapi-js/"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr>
-                        <tr>
-                        <td>ArcGIS Maps SDK for JavaScript</td>
+                        <th scope="row" class="table-info">Web app <i class="fas fa-globe"></i></th>
+                        <td>OGC CSAPI Explorer</td>
+                        <td title="Live app"><a href="https://ogc-csapi-explorer.pages.dev/" target="_blank"><i class="fas fa-link"></i></a></td>
                         <td></td>
-                        <td title="Tutorial/Example"><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OGCFeatureLayer.html"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
+                        <td>Reference web client for browsing any conformant CSAPI server — Systems, Datastreams, Observations, and live streams.</td>
                         </tr>
-                        <tr>
-                        <th scope="row" rowspan="3" class="table-info">C/C++</th>
-                        <td>GDAL</td>
-                        <td title="GitHub repository"><a href="https://github.com/OSGeo/gdal"><i class="fab fa-github"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://gdal.org/drivers/vector/oapif.html"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr>
-                        <tr>
-                        <td>QGIS</td>
-                        <td title="GitHub repository"><a href="https://github.com/qgis/QGIS/"><i class="fab fa-github"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://github.com/opengeospatial/ogcapi-features/blob/master/implementations/clients/qgis.md"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr>                       
-                        <tr>
-                        <td>ArcGIS Pro</td>
-                        <td></td>
-                        <td title="Tutorial/Example"><a href="https://pro.arcgis.com/en/pro-app/latest/help/data/services/add-ogc-api-services.htm"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr> 
-                        <tr>
-                        <th scope="row" class="table-info">Integration framework<i class="fa fa-wrench"></i> </th>
-                        <td>Apache Camel</td>
-                        <td title="GitHub repository"><a href="https://github.com/KaotoIO/step-extension-ogcapi-features-action"><i class="fab fa-github"></i></a><a href="https://github.com/apache/camel-kamelets/blob/main/kamelets/ogcapi-features-action.kamelet.yaml"><i class="fab fa-github"></i></a></td>
-                        <td title="Tutorial/Example"><a href="https://kaoto.io/portfolio/"><i class="fas fa-graduation-cap"></i>/<i class="fas fa-code"></i></a></td>                
-                        </tr>                        
                     </tbody>
                     </table>
-
-                    h3.section-subheading.text-muted <sup>*</sup> Certified 
-                        a(href='https://www.ogc.org/compliance' title='Compliance' target="_blank") compliant
-                        | product.
 
 
         section#adopters.page-section
             .container
                 .text-center
-                    h2.section-heading.text-uppercase Who is behind OGC API - Features?
+                    h2.section-heading.text-uppercase Who is behind OGC API - Connected Systems?
                 p.text-muted 
-                    | OGC API Features is developed through a member-driven consensus process, which creates royalty free, publicly available, open geospatial Standards.
-                    | The
-                    a(href="https://www.ogc.org/") Open Geospatial Consortium (OGC)
-                    | is the organisation which drives this process. It is supported by an active community of members, with involvement from a large range of organizations, as well as smaller ones. <a href="https://www.ogc.org/ogc/join/levels">Join OGC today!</a>
+                    | OGC API - Connected Systems is developed through the OGC's member-driven consensus process, which produces royalty-free, publicly available, open geospatial standards. The
+                    |  
+                    a(href='https://www.ogc.org/') Open Geospatial Consortium (OGC)
+                    |  is the organisation that drives this process. The site you are reading is hosted by
+                    |  
+                    a(href='https://github.com/OS4CSAPI') OS4CSAPI
+                    | , a community of organisations and individuals working to grow the CSAPI implementation ecosystem.
+                    |  
+                    a(href='https://www.ogc.org/ogc/join/levels') Join OGC today!
 
                 div.py-5
                     .container
                         .row.align-items-center
-                            .col-md-4.col-sm-6.my-4   
-                                a(href='https://www.interactive-instruments.de/en/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/interactive-instruments.svg', alt='...')    
                             .col-md-4.col-sm-6.my-4
-                                a(href='https://ecere.ca/"')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/ecere.svg', alt='...')
+                                a(href='https://github.com/OS4CSAPI' target='_blank')
+                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/os4csapi.svg', alt='OS4CSAPI')
                             .col-md-4.col-sm-6.my-4
-                                a(href='https://www.ordnancesurvey.co.uk/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/os.svg', alt='...')                                  
+                                a(href='https://www.riversideresearch.org/' target='_blank')
+                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/riverside-research.svg', alt='Riverside Research')
                             .col-md-4.col-sm-6.my-4
-                                a(href='https://natural-resources.canada.ca/home')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/nrcan.svg', alt='...')
+                                a(href='https://www.ogc.org/' target='_blank')
+                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/OGC_logo.svg', alt='OGC')
                             .col-md-4.col-sm-6.my-4
-                                a(href='https://www.esa.int/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/esa.svg', alt='...')
+                                a(href='https://www.georobotix.io/' target='_blank')
+                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/georobotix.svg', alt='Georobotix')
                             .col-md-4.col-sm-6.my-4
-                                a(href='https://www.cubic.com/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/cubic.svg', alt='...')
+                                a(href='https://opensensorhub.org/' target='_blank')
+                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/opensensorhub.svg', alt='OpenSensorHub')
                             .col-md-4.col-sm-6.my-4
-                                a(href='https://hexagon.com/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/hexagon.svg', alt='...')  
+                                a(href='https://52north.org/' target='_blank')
+                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/52north.svg', alt='52 North')
                             .col-md-4.col-sm-6.my-4
-                                a(href='https://www.trimble.com/en')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/TrimbleR-Horiz-RGB-Blue.svg', alt='...')                                   
-                            .col-md-4.col-sm-6.my-4   
-                                a(href='https://i-bitz.co.th/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/i-bitz_logo.svg', alt='...')                                      
-                            .col-md-4.col-sm-.my-4
-                                a(href='https://www.maxar.com/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/maxar_gold_logo_rgb.svg',  alt='...')
-                            .col-md-4.col-sm-.my-4
-                                a(href='https://www.esri.com/')
-                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/Esri_logo.svg',  alt='...')
+                                a(href='https://github.com/SomethingCreativeStudios' target='_blank')
+                                    img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/something-creative-studios.svg', alt='Something Creative Studios')
 
-                p.text-muted.small 
-                    | The logos above are a small subset of all OGC members.
-                    | They are either strategic/principal members, and/or organisations who implement products certified for OGC API - Features.
+                p.text-muted.small
+                    | These are organisations and projects actively contributing CSAPI implementations, deployments, and tooling. Want your logo here? File an issue on the
+                    |  
+                    a(href='https://github.com/OS4CSAPI/ogc-csapi-website/issues' target='_blank') ogc-csapi-website
+                    |  repo.
 
-
-        // Get started
-        section#getstarted.page-section.bg-light
+        section#getinvolved.page-section.bg-light
             .container
-                .text-center
-                    h2.section-heading.text-uppercase Get Started
-                    h3.section-subheading.text-muted Pick a path — read the spec, try a live API, or stand up your own.
-
-
-                ul.timeline
-                    li
-                        .timeline-image
-                            a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' title='Read the specification' target='_blank')
-                                img.rounded-circle.img-fluid(src='assets/img/about/ogcapi.png', alt='...')
-                        .timeline-panel
-                            .timeline-heading
-                                h4.subheading Read the specification
-                            .timeline-body
-                                p.text-muted
-                                    | Start with 
-                                    a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' target='_blank') Part 1: Feature Resources
-                                    |  to learn the core resource model, then 
-                                    a(href='https://docs.ogc.org/is/23-002r0/23-002r0.html' target='_blank') Part 2: Dynamic Data
-                                    |  for Datastreams, Observations, ControlStreams, and Commands. Both parts include conformance classes you can target incrementally.
-                    li.timeline-inverted
-                        .timeline-image
-                            a(href='https://github.com/opengeospatial/ogcapi-connected-systems' title='Spec source and OpenAPI definitions' target='_blank')
-                                img.rounded-circle.img-fluid(src='assets/img/about/spring.jpeg', alt='...')
-                        .timeline-panel
-                            .timeline-heading
-                                h4.subheading Browse the OpenAPI definitions
-                            .timeline-body
-                                p.text-muted
-                                    | The 
-                                    a(href='https://github.com/opengeospatial/ogcapi-connected-systems' target='_blank') ogcapi-connected-systems
-                                    |  repository contains the spec source, OpenAPI documents, and JSON Schemas for every resource. Drop them into Swagger UI, Redoc, or your favourite code generator and you have a typed client in minutes.
-                    li
-                        .timeline-image
-                            a(href='https://api.georobotix.io/ogc/t18/api' title='Try a live CSAPI endpoint' target='_blank')
-                                img.rounded-circle.img-fluid(src='assets/img/about/elearning.jpeg', alt='...')
-                        .timeline-panel
-                            .timeline-heading
-                                h4.subheading Try a live endpoint
-                            .timeline-body
-                                p.text-muted
-                                    | Hit a public CSAPI test server such as the
-                                    |  
-                                    a(href='https://api.georobotix.io/ogc/t18/api' target='_blank') Georobotix Testbed-18 instance
-                                    |  and walk the resource graph: 
-                                    code /systems
-                                    | , 
-                                    code /datastreams
-                                    | , 
-                                    code /observations
-                                    | . Content negotiate JSON, GeoJSON, or SWE Common as needed.
-                    li.timeline-inverted
-                     a(href='#getinvolved' title='Get Involved')
-                        .timeline-image
-                            h4
-                                | Get
-                                br
-                                | Involved!
-
-
-        // Get involved
-        section#getinvolved.page-section
-             .container
                 .text-center
                     h2.section-heading.text-uppercase Get Involved
                     h3.section-subheading.text-muted Tell us what’s working well, what you want to see added or improved, and find out about new updates.
                 .row.text-center
-                    .col-md-4
-                        span.fa-stack.fa-4x
-                            a(href='https://stackoverflow.com/questions/tagged/ogc-api' title='Stack Overflow')
-                                i.fas.fa-circle.fa-stack-2x.text-primary
-                                i.fab.fa-stack-overflow.fa-stack-1x.fa-inverse
-                        h4.my-3 Stack Overflow
-                        p.text-muted
-                            | Engage with your peers and ask questions about CSAPI using the
-                            |  
-                            code ogc-api
-                            |  tag.
-                    .col-md-4
+                    .col-md-6
                         span.fa-stack.fa-4x
                             a(href='https://discord.gg/3uyaZZuXr3' title='Discord')                        
                                 i.fas.fa-circle.fa-stack-2x.text-primary
@@ -527,7 +327,7 @@ html(lang='en')
                         h4.my-3 Discord
                         p.text-muted
                             | Chat with other CSAPI users and implementers in the OGC Community Discord.
-                    .col-md-4
+                    .col-md-6
                         span.fa-stack.fa-4x
                             a(href='https://github.com/opengeospatial/ogcapi-connected-systems' title='GitHub')
                                 i.fas.fa-circle.fa-stack-2x.text-primary
