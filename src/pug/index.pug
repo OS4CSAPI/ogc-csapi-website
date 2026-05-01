@@ -403,6 +403,69 @@ html(lang='en')
                         | Hover a column header for the part name.
 
 
+        section#getstarted.page-section.bg-light
+            .container
+                .text-center
+                    h2.section-heading.text-uppercase Get Started
+                    h3.section-subheading.text-muted Pick a path — read the spec, try a live API, or stand up your own.
+
+
+                ul.timeline
+                    li
+                        .timeline-image
+                            a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' title='Read the specification' target='_blank')
+                                img.rounded-circle.img-fluid(src='assets/img/about/ogcapi.png', alt='...')
+                        .timeline-panel
+                            .timeline-heading
+                                h4.subheading Read the specification
+                            .timeline-body
+                                p.text-muted
+                                    | Start with 
+                                    a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' target='_blank') Part 1: Feature Resources
+                                    |  to learn the core resource model, then 
+                                    a(href='https://docs.ogc.org/is/23-002r0/23-002r0.html' target='_blank') Part 2: Dynamic Data
+                                    |  for Datastreams, Observations, ControlStreams, and Commands. Both parts include conformance classes you can target incrementally.
+                    li.timeline-inverted
+                        .timeline-image
+                            a(href='https://github.com/opengeospatial/ogcapi-connected-systems' title='Spec source and OpenAPI definitions' target='_blank')
+                                img.rounded-circle.img-fluid(src='assets/img/about/spring.jpeg', alt='...')
+                        .timeline-panel
+                            .timeline-heading
+                                h4.subheading Browse the OpenAPI definitions
+                            .timeline-body
+                                p.text-muted
+                                    | The 
+                                    a(href='https://github.com/opengeospatial/ogcapi-connected-systems' target='_blank') ogcapi-connected-systems
+                                    |  repository contains the spec source, OpenAPI documents, and JSON Schemas for every resource. Drop them into Swagger UI, Redoc, or your favourite code generator and you have a typed client in minutes.
+                    li
+                        .timeline-image
+                            a(href='https://129-80-248-53.sslip.io/sensorhub/api' title='Try a live CSAPI endpoint' target='_blank')
+                                img.rounded-circle.img-fluid(src='assets/img/about/elearning.jpeg', alt='...')
+                        .timeline-panel
+                            .timeline-heading
+                                h4.subheading Try a live endpoint
+                            .timeline-body
+                                p.text-muted
+                                    | Hit a public CSAPI test server such as the OS4CSAPI 
+                                    a(href='https://129-80-248-53.sslip.io/sensorhub/api' target='_blank') OpenSensorHub instance
+                                    |  or the 
+                                    a(href='https://129-80-248-53.sslip.io/csapi-go/' target='_blank') connected-systems-go demo
+                                    |  and walk the resource graph: 
+                                    code /systems
+                                    | , 
+                                    code /datastreams
+                                    | , 
+                                    code /observations
+                                    | . Content negotiate JSON, GeoJSON, or SWE Common as needed.
+                    li.timeline-inverted
+                     a(href='#getinvolved' title='Get Involved')
+                        .timeline-image
+                            h4
+                                | Get
+                                br
+                                | Involved!
+
+
         section#getinvolved.page-section.bg-light
             .container
                 .text-center
