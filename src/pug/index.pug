@@ -99,7 +99,7 @@ html(lang='en')
                 .text-center
                     h2.section-heading.text-uppercase Overview
                     h3.section-subheading.text-muted OGC API - Connected Systems exposes sensors, the things they observe, and the commands sent to them as web resources.
-                    img.img-fluid(src='assets/img/overview.svg', title='OGC API - Connected Systems resource model', alt='Resource model overview')
+                    img.img-fluid(src='assets/img/overview.png', title='OGC API - Connected Systems resource model', alt='Connected Systems ecosystem overview')
                 .text-left
                     p.text-muted
                         | The standard is published in two parts. 
@@ -210,61 +210,117 @@ html(lang='en')
                         | .
 
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered align-middle text-center">
                     <thead>
-                        <tr>
-                        <th scope="col" colspan="5" class="table-dark">Servers by Technology</th>
+                        <tr class="table-dark">
+                        <th scope="col" colspan="3" class="text-start">Servers</th>
+                        <th scope="col" colspan="5">Parts of the standard implemented</th>
+                        </tr>
+                        <tr class="table-secondary small">
+                        <th scope="col" class="text-start">Tech</th>
+                        <th scope="col" class="text-start">Name</th>
+                        <th scope="col">Links</th>
+                        <th scope="col" title="Part 1 — Feature Resources">P1</th>
+                        <th scope="col" title="Part 2 — Dynamic Data">P2</th>
+                        <th scope="col" title="Part 3">P3</th>
+                        <th scope="col" title="Part 4">P4</th>
+                        <th scope="col" title="Part 5">P5</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="row" class="table-info">Go <i class="fas fa-server"></i></th>
-                        <td>connected-systems-go</td>
-                        <td title="GitHub repository"><a href="https://github.com/SomethingCreativeStudios/connected-systems-go" target="_blank"><i class="fab fa-github"></i></a></td>
-                        <td title="Live demo"><a href="https://129-80-248-53.sslip.io/csapi-go" target="_blank"><i class="fas fa-link"></i></a></td>
-                        <td>A Go implementation of CSAPI Part 1 and Part 2; primary integration target for OS4CSAPI conformance work.</td>
+                        <th scope="row" class="table-info text-start">Go <i class="fas fa-server"></i></th>
+                        <td class="text-start">connected-systems-go</td>
+                        <td><a href="https://github.com/SomethingCreativeStudios/connected-systems-go" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> &nbsp; <a href="https://129-80-248-53.sslip.io/csapi-go" target="_blank" title="Live demo"><i class="fas fa-link"></i></a></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
                         </tr>
                         <tr>
-                        <th scope="row" class="table-info">Java <i class="fab fa-java"></i></th>
-                        <td>OpenSensorHub</td>
-                        <td title="GitHub repository"><a href="https://github.com/opensensorhub" target="_blank"><i class="fab fa-github"></i></a></td>
-                        <td title="Live demo"><a href="https://129-80-248-53.sslip.io/sensorhub/api" target="_blank"><i class="fas fa-link"></i></a></td>
-                        <td>Mature Java sensor framework with native CSAPI support, including SensorML and SWE Common encodings.</td>
+                        <th scope="row" class="table-info text-start">Java <i class="fab fa-java"></i></th>
+                        <td class="text-start">OpenSensorHub</td>
+                        <td><a href="https://github.com/opensensorhub" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> &nbsp; <a href="https://129-80-248-53.sslip.io/sensorhub/api" target="_blank" title="Live demo"><i class="fas fa-link"></i></a></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
                         </tr>
                         <tr>
-                        <th scope="row" class="table-info">Python <i class="fab fa-python"></i></th>
-                        <td>connected-systems-pygeoapi</td>
-                        <td title="GitHub repository"><a href="https://github.com/52North/connected-systems-pygeoapi" target="_blank"><i class="fab fa-github"></i></a></td>
-                        <td title="Live demo"><a href="https://csa.demo.52north.org/" target="_blank"><i class="fas fa-link"></i></a></td>
-                        <td>52°North's CSAPI plugin for pygeoapi.</td>
+                        <th scope="row" class="table-info text-start">Python <i class="fab fa-python"></i></th>
+                        <td class="text-start">connected-systems-pygeoapi</td>
+                        <td><a href="https://github.com/52North/connected-systems-pygeoapi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> &nbsp; <a href="https://csa.demo.52north.org/" target="_blank" title="Live demo"><i class="fas fa-link"></i></a></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
                         </tr>
                     </tbody>
                     </table>
 
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered align-middle text-center">
                     <thead>
-                        <tr>
-                        <th scope="col" colspan="5" class="table-dark">Clients by Technology</th>
+                        <tr class="table-dark">
+                        <th scope="col" colspan="3" class="text-start">Clients</th>
+                        <th scope="col" colspan="5">Parts of the standard implemented</th>
+                        </tr>
+                        <tr class="table-secondary small">
+                        <th scope="col" class="text-start">Tech</th>
+                        <th scope="col" class="text-start">Name</th>
+                        <th scope="col">Links</th>
+                        <th scope="col" title="Part 1 — Feature Resources">P1</th>
+                        <th scope="col" title="Part 2 — Dynamic Data">P2</th>
+                        <th scope="col" title="Part 3">P3</th>
+                        <th scope="col" title="Part 4">P4</th>
+                        <th scope="col" title="Part 5">P5</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="row" class="table-info">TypeScript <i class="fab fa-js"></i></th>
-                        <td>ogc-client (CSAPI fork)</td>
-                        <td title="GitHub repository"><a href="https://github.com/RiversideResearch/ogc-client" target="_blank"><i class="fab fa-github"></i></a></td>
-                        <td title="npm"><a href="https://www.npmjs.com/package/@camptocamp/ogc-client" target="_blank"><i class="fab fa-npm"></i></a></td>
-                        <td>Browser-friendly TypeScript client. The Riverside Research fork adds CSAPI Part 1 and Part 2 resource access on top of upstream OGC API support.</td>
+                        <th scope="row" class="table-info text-start">TypeScript <i class="fab fa-js"></i></th>
+                        <td class="text-start">ogc-client (CSAPI fork)</td>
+                        <td><a href="https://github.com/RiversideResearch/ogc-client" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> &nbsp; <a href="https://www.npmjs.com/package/@camptocamp/ogc-client" target="_blank" title="npm"><i class="fab fa-npm"></i></a></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
                         </tr>
                         <tr>
-                        <th scope="row" class="table-info">Web app <i class="fas fa-globe"></i></th>
-                        <td>OGC CSAPI Explorer</td>
-                        <td title="Live app"><a href="https://ogc-csapi-explorer.pages.dev/" target="_blank"><i class="fas fa-link"></i></a></td>
-                        <td></td>
-                        <td>Reference web client for browsing any conformant CSAPI server — Systems, Datastreams, Observations, and live streams.</td>
+                        <th scope="row" class="table-info text-start">Web app <i class="fas fa-globe"></i></th>
+                        <td class="text-start">OGC CSAPI Explorer</td>
+                        <td><a href="https://github.com/OS4CSAPI/ogc-csapi-explorer" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> &nbsp; <a href="https://ogc-csapi-explorer.pages.dev/" target="_blank" title="Live app"><i class="fas fa-link"></i></a></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="table-success"><i class="fas fa-check"></i></td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
+                        </tr>
+                        <tr>
+                        <th scope="row" class="table-info text-start">Python <i class="fab fa-python"></i></th>
+                        <td class="text-start">OWSLib</td>
+                        <td><a href="https://github.com/geopython/OWSLib" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></td>
+                        <td class="table-warning" title="Planned / partial"><i class="fas fa-hourglass-half"></i></td>
+                        <td class="table-warning" title="Planned / partial"><i class="fas fa-hourglass-half"></i></td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
+                        <td class="text-muted">&mdash;</td>
                         </tr>
                     </tbody>
                     </table>
+
+                    p.text-muted.small.mt-3
+                        | Legend:
+                        |  
+                        i.fas.fa-check.text-success
+                        |  implemented · 
+                        i.fas.fa-hourglass-half.text-warning
+                        |  in progress / partial · &mdash; not yet.
+                        | Hover a column header for the part name.
 
 
         section#adopters.page-section
