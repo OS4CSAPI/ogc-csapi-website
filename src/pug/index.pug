@@ -7,11 +7,31 @@ html(lang='en')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
         meta(name='description', content='Developer micro site for the OGC API – Connected Systems standards family (CSAPI Part 1: Feature Resources, Part 2: Dynamic Data) and the SensorML and SWE Common encodings.')
         meta(name='author', content='OS4CSAPI')
+        meta(name='theme-color', content='#212529')
+        link(rel='canonical', href='https://csapi.developer.ogc.org/')
+
+        // Open Graph
+        meta(property='og:type', content='website')
+        meta(property='og:site_name', content='OGC API – Connected Systems')
+        meta(property='og:title', content='OGC API – Connected Systems')
+        meta(property='og:description', content='Developer micro site for the OGC API – Connected Systems standards family — Part 1: Feature Resources and Part 2: Dynamic Data — with SensorML and SWE Common encodings.')
+        meta(property='og:url', content='https://csapi.developer.ogc.org/')
+        meta(property='og:image', content='https://csapi.developer.ogc.org/assets/img/overview.png')
+        meta(property='og:image:alt', content='OGC API – Connected Systems resource model')
+
+        // Twitter card
+        meta(name='twitter:card', content='summary_large_image')
+        meta(name='twitter:title', content='OGC API – Connected Systems')
+        meta(name='twitter:description', content='Developer micro site for the OGC API – Connected Systems standards family.')
+        meta(name='twitter:image', content='https://csapi.developer.ogc.org/assets/img/overview.png')
 
         title OGC API - Connected Systems
 
         // Favicon
-        link(rel='icon', type='image/x-icon', href='assets/3d_emblem_lockup.ico')
+        link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
+        link(rel='shortcut icon', type='image/x-icon', href='assets/favicon.ico')
+        link(rel='icon', type='image/png', sizes='192x192', href='assets/img/logos/os4csapi.png')
+        link(rel='apple-touch-icon', href='assets/img/logos/os4csapi.png')
 
         // Font Awesome icons (free version)
         script(src='https://use.fontawesome.com/releases/v5.15.3/js/all.js', crossorigin='anonymous')
@@ -162,7 +182,7 @@ html(lang='en')
                             h4 CS GO Reference Server
                             p.text-muted Powered by connected-systems-go
                             p.text-muted A public Go-based CSAPI server hosted by OS4CSAPI. Implements Part 1 (Feature Resources) and Part 2 (Dynamic Data) and is the primary integration target for the OS4CSAPI conformance and tutorial work.
-                            a.btn.btn-dark.btn-social.mx-2(href='https://129-80-248-53.sslip.io/csapi-go' title='Landing page' target='_blank')
+                            a.btn.btn-dark.btn-social.mx-2(href='https://129-80-248-53.sslip.io/csapi-go/' title='Landing page' target='_blank')
                                 i.fa.fa-link
                             a.btn.btn-dark.btn-social.mx-2(href='https://github.com/SomethingCreativeStudios/connected-systems-go' title='Source code' target='_blank')
                                 i.fab.fa-github
@@ -241,7 +261,7 @@ html(lang='en')
                         <tr>
                         <th scope="row" class="table-info text-start">Go <i class="fas fa-server"></i></th>
                         <td class="text-start">connected-systems-go</td>
-                        <td><a href="https://github.com/SomethingCreativeStudios/connected-systems-go" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> &nbsp; <a href="https://129-80-248-53.sslip.io/csapi-go" target="_blank" title="Live demo"><i class="fas fa-link"></i></a></td>
+                        <td><a href="https://github.com/SomethingCreativeStudios/connected-systems-go" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> &nbsp; <a href="https://129-80-248-53.sslip.io/csapi-go/" target="_blank" title="Live demo"><i class="fas fa-link"></i></a></td>
                         <td class="table-success"><i class="fas fa-check"></i></td>
                         <td class="table-success"><i class="fas fa-check"></i></td>
                         <td class="text-muted">&mdash;</td>
