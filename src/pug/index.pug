@@ -98,34 +98,51 @@ html(lang='en')
             .container
                 .text-center
                     h2.section-heading.text-uppercase Overview
-                    h3.section-subheading.text-muted OGC API - Features provides access to collections of geospatial data.
-                    img(src='assets/img/overview.png', title='Source: https://demo.ldproxy.net/daraa', alt='..')
+                    h3.section-subheading.text-muted OGC API - Connected Systems exposes sensors, the things they observe, and the commands sent to them as web resources.
+                    img(src='assets/img/overview.png', title='OGC API - Connected Systems resource model', alt='Resource model overview')
                 .text-left
+                    p.text-muted
+                        | The standard is published in two parts. 
+                        a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' target='_blank') Part 1: Feature Resources
+                        |  defines how to describe and discover the systems that produce data \u2014 their identifiers, metadata, deployment context, and the things they sample. 
+                        a(href='https://docs.ogc.org/is/23-002r0/23-002r0.html' target='_blank') Part 2: Dynamic Data
+                        |  defines how observations and tasking commands flow to and from those systems in real time and historically.
+                    h4.mt-4 Part 1 \u2014 Feature Resources
                     ul
                         li
-                            h4 Get collections
-                            p.text-muted Lists the collections of data on the server that can be queried, and each describes basic information about the geospatial data collection, like its id and description, as well as the spatial and temporal extents of all the data contained.
+                            h4 Systems
+                            p.text-muted Anything that produces data or accepts commands \u2014 a sensor, a platform, a process, a simulation, or a human observer. Systems may be nested (a satellite carries instruments which carry detectors) and have a lifecycle of Deployments.
                         li
-                            h4 Get items
-                            p.text-muted Requests all the data in a given collection. The response format (typically HTML or a GeoJSON feature collection, but GML is supported, too, and extensions can easily supply others) is determined using HTTP content negotiation.
+                            h4 Procedures
+                            p.text-muted The methodology a System implements: the model of a sensor, a survey protocol, an algorithm. Procedures describe what a System is capable of, independent of any specific deployment.
                         li
-                            h4 Get feature
-                            p.text-muted Returns a single 'feature' - something in the real-world (a building, a stream, a county, etc.) that typically is described by a geometry plus other properties. This provides a stable, canonical URL to link to the 'thing'.
+                            h4 Deployments
+                            p.text-muted A specific instance of a System operating at a place and time \u2014 a buoy moored at a station, a UAV flown on a sortie, an instrument installed on a tower.
+                        li
+                            h4 Sampling Features
+                            p.text-muted The geometry that links what a System measured to where and how it measured it: a sampling point, curve, surface, or volume in the real world.
+                        li
+                            h4 Features of Interest
+                            p.text-muted The real-world thing being observed or acted upon \u2014 a river reach, a building, an aircraft, a parcel of atmosphere.
+                    h4.mt-4 Part 2 \u2014 Dynamic Data
+                    ul
+                        li
+                            h4 Datastreams &amp; Observations
+                            p.text-muted A Datastream is the channel through which a System publishes Observations of a property of a Feature of Interest. Datastreams expose both the historical archive (paged, filtered, time-windowed) and the live stream (HTTP long-poll, WebSocket, or MQTT) under one model.
+                        li
+                            h4 ControlStreams &amp; Commands
+                            p.text-muted The tasking counterpart to Datastreams. A ControlStream is the channel through which Commands are issued to a System; the standard defines command lifecycle, status reporting, and the same multi-protocol delivery model as Datastreams.
+                        li
+                            h4 SWE Common &amp; SensorML encodings
+                            p.text-muted Observation payloads and System descriptions are encoded with the OGC SWE Common data model and SensorML \u2014 self-describing, schema-driven encodings that capture units, uncertainties, quality flags, and processing lineage so consumers can interpret data without out-of-band documentation.
 
-                p.text-muted If you are interested in finding out how-to use other coordinate reference systems, you can 
-                    a(href='https://github.com/opengeospatial/ogcapi-features/tree/master/extensions/crs' target="_blank") read this
-
-                    |. You can find 
-                    a(href='https://ogcapi.ogc.org/features/' target="_blank") here
-                    
-                    //- |. You can also read 
-                    //- a(href='https://docs.ogc.org/is/17-069r3/17-069r3.html' target="_blank") part 1
-                    //- | and 
-                    //- a(href='https://docs.ogc.org/is/18-058/18-058.html' target="_blank") part 2
-                    | links for different parts of the spec and explore it using 
-                    a(href='https://app.swaggerhub.com/apis/cportele/ogcapi-features-1-example1/1.0.0' target="_blank") Swagger
-                    |.
-                    
+                p.text-muted See the
+                    |  
+                    a(href='https://ogcapi.ogc.org/connectedsystems/' target='_blank') OGC API - Connected Systems landing page
+                    |  for the full specification index, conformance classes, and links to the published OpenAPI definitions. Browse the source on
+                    |  
+                    a(href='https://github.com/opengeospatial/ogcapi-connected-systems' target='_blank') GitHub
+                    | .
 
         // In action
         section#inaction.page-section
@@ -426,35 +443,55 @@ html(lang='en')
             .container
                 .text-center
                     h2.section-heading.text-uppercase Get Started
-                    h3.section-subheading.text-muted Here is something to get you started.
+                    h3.section-subheading.text-muted Pick a path — read the spec, try a live API, or stand up your own.
 
 
                 ul.timeline
                     li
                         .timeline-image
-                            a(href='https://ogcapi-workshop.ogc.org/api-deep-dive/features/' title='OGC API Workshop' target="_blank")
+                            a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' title='Read the specification' target='_blank')
                                 img.rounded-circle.img-fluid(src='assets/img/about/ogcapi.png', alt='...')
                         .timeline-panel
                             .timeline-heading
-                                h4.subheading Complete an online training
+                                h4.subheading Read the specification
                             .timeline-body
                                 p.text-muted
-                                    | If you are familiar with web services and APIs, and want to have an overview of the OGC API - Features Standard, this training is for you.
+                                    | Start with 
+                                    a(href='https://docs.ogc.org/is/23-001r0/23-001r0.html' target='_blank') Part 1: Feature Resources
+                                    |  to learn the core resource model, then 
+                                    a(href='https://docs.ogc.org/is/23-002r0/23-002r0.html' target='_blank') Part 2: Dynamic Data
+                                    |  for Datastreams, Observations, ControlStreams, and Commands. Both parts include conformance classes you can target incrementally.
                     li.timeline-inverted
                         .timeline-image
-                            a(href='https://dev.to/doublebyte/sharing-geospatial-data-with-ogc-api-pygeoapi-and-mongodb-4lo7' title='E-learning' target="_blank")
-                                img.rounded-circle.img-fluid(src='assets/img/about/sawcer.jpeg', alt='...')
+                            a(href='https://github.com/opengeospatial/ogcapi-connected-systems' title='Spec source and OpenAPI definitions' target='_blank')
+                                img.rounded-circle.img-fluid(src='assets/img/about/spring.jpeg', alt='...')
                         .timeline-panel
                             .timeline-heading
-                                h4.subheading Follow a tutorial
+                                h4.subheading Browse the OpenAPI definitions
                             .timeline-body
                                 p.text-muted
-                                    | Implement a complete pipeline to make your data available with OGC API - Features, using a stack of free and open source software.
-                                    | A video version is available 
-                                    a(href="https://dev.to/doublebyte/how-to-share-geospatial-data-on-the-web-54b7") here.
-
-                            //a.btn.btn-dark.btn-social.mx-2(href='http://opengeospatial.github.io/e-learning/ogcapi-features/text/basic-index.html' title='E-learning' target="_blank")
-                                i.fa.fa-link
+                                    | The 
+                                    a(href='https://github.com/opengeospatial/ogcapi-connected-systems' target='_blank') ogcapi-connected-systems
+                                    |  repository contains the spec source, OpenAPI documents, and JSON Schemas for every resource. Drop them into Swagger UI, Redoc, or your favourite code generator and you have a typed client in minutes.
+                    li
+                        .timeline-image
+                            a(href='https://api.georobotix.io/ogc/t18/api' title='Try a live CSAPI endpoint' target='_blank')
+                                img.rounded-circle.img-fluid(src='assets/img/about/elearning.jpeg', alt='...')
+                        .timeline-panel
+                            .timeline-heading
+                                h4.subheading Try a live endpoint
+                            .timeline-body
+                                p.text-muted
+                                    | Hit a public CSAPI test server such as the
+                                    |  
+                                    a(href='https://api.georobotix.io/ogc/t18/api' target='_blank') Georobotix Testbed-18 instance
+                                    |  and walk the resource graph: 
+                                    code /systems
+                                    | , 
+                                    code /datastreams
+                                    | , 
+                                    code /observations
+                                    | . Content negotiate JSON, GeoJSON, or SWE Common as needed.
                     li.timeline-inverted
                      a(href='#getinvolved' title='Get Involved')
                         .timeline-image
@@ -473,12 +510,15 @@ html(lang='en')
                 .row.text-center
                     .col-md-4
                         span.fa-stack.fa-4x
-                            a(href='https://stackoverflow.com/search?q=ogc+api+features' title='Stack Overflow')
+                            a(href='https://stackoverflow.com/questions/tagged/ogc-api' title='Stack Overflow')
                                 i.fas.fa-circle.fa-stack-2x.text-primary
                                 i.fab.fa-stack-overflow.fa-stack-1x.fa-inverse
                         h4.my-3 Stack Overflow
                         p.text-muted
-                            | Engage with your peers and ask questions about OGC API - Features using the tag 'OGC API - Features'
+                            | Engage with your peers and ask questions about CSAPI using the
+                            |  
+                            code ogc-api
+                            |  tag.
                     .col-md-4
                         span.fa-stack.fa-4x
                             a(href='https://discord.gg/3uyaZZuXr3' title='Discord')                        
@@ -486,15 +526,18 @@ html(lang='en')
                                 i.fab.fa-discord.fa-stack-1x.fa-inverse
                         h4.my-3 Discord
                         p.text-muted
-                            | Chat with other OGC API - Features users in the OGC Community channel.
+                            | Chat with other CSAPI users and implementers in the OGC Community Discord.
                     .col-md-4
                         span.fa-stack.fa-4x
-                            a(href='https://github.com/opengeospatial/ogcapi-features' title='GitHub')
+                            a(href='https://github.com/opengeospatial/ogcapi-connected-systems' title='GitHub')
                                 i.fas.fa-circle.fa-stack-2x.text-primary
                                 i.fab.fa-github.fa-stack-1x.fa-inverse
                         h4.my-3 GitHub
                         p.text-muted
-                            | Found a bug, or want to give us constructive feedback? 
+                            | File issues, propose changes, and follow the CSAPI Standards Working Group on the
+                            |  
+                            a(href='https://github.com/opengeospatial/ogcapi-connected-systems' target='_blank') ogcapi-connected-systems
+                            |  repo.
 
 
         // Footer
@@ -502,7 +545,7 @@ html(lang='en')
             .container
                 .row.align-items-center
                     .col-lg-4.text-lg-start
-                        | Copyright &copy; 2021. Open Geospatial Consortium all rights reserved
+                        | Copyright &copy; 2026. Open Geospatial Consortium all rights reserved
                     .col-lg-4.my-3.my-lg-0
                         //- a.btn.btn-dark.btn-social.mx-2(href='https://twitter.com/opengeospatial/')
                         //-     i.fab.fa-twitter
