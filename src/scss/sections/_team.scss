@@ -20,6 +20,8 @@
 
 // Brand images for client section
 .img-brand {
-    //height: 2.75rem;
-    height: 80px;
+    height: 140px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
