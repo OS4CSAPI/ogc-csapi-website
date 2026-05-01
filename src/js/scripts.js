@@ -24,9 +24,12 @@ window.addEventListener('DOMContentLoaded', event => {
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
-    // Activate Bootstrap scrollspy on the main nav element
+    // ScrollSpy is initialized declaratively via data-bs-spy on <body>;
+    // re-instantiate here once after layout so target sections resolve correctly.
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
+        const existing = bootstrap.ScrollSpy.getInstance(document.body);
+        if (existing) { existing.dispose(); }
         new bootstrap.ScrollSpy(document.body, {
             target: '#mainNav',
             offset: 74,
